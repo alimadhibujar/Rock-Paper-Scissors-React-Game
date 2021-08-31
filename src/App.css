@@ -33,7 +33,7 @@ h1 {
     inset -10px -10px 12px hsl(0, 0%, 92%);
   border-radius: 10%;
   position: relative;
-  margin: 20px auto 0;
+  margin: 20px auto;
 }
 .selections,
 .hands,
@@ -182,4 +182,25 @@ button:last-child {
   100% {
     transform: translateY(0px);
   }
+}
+
+.githubIcon{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(211, 44%, 60%);
+  text-shadow: 2px 2px 0 #424242;
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+}
+.githubIcon i{
+  font-size: 2.5rem;
+  color: hsl(211, 44%, 55%);
+  border-radius: 50%;
+  animation: waveyButtons 1.5s infinite linear;
+}
+.githubIcon i:hover{
+  animation-play-state: paused;
+  transform: scale(1.1);
+  color: hsl(211, 44%, 45%);
 }

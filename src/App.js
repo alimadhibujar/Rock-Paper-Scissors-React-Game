@@ -93,7 +93,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Rock - Paper - Scissors React Game</h1>
+      <h1>Rock - Paper - Scissors - React Game</h1>
       <div className = "game">
         <div className="scores">
           <h2>You : {userScore}</h2>
@@ -128,6 +128,13 @@ const App = () => {
           <button onClick={() => handleClick("scissors")}>✌🏽</button>
         </div>
       </div>
+      <p class="githubIcon">
+       Code on &nbsp;<a
+        target="_blank"
+        href="https://github.com/alimadhibujar/Rock-Paper-Scissors-React-Game"
+        ><i class="fa fa-github" title="github"></i>
+      </a>
+    </p>
     </div>
   );
 };
