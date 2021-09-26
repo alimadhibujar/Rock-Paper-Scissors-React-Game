@@ -14,6 +14,14 @@ const App = () => {
   const [message, setMessage] = useState("Click on 👊🏽✋🏽✌🏽 to start...");
   const [refresh, setRefresh] = useState("");
 
+  const choices = [{"icon" : "👊🏽" , "name":"rock"}, {"icon":"✋🏽", "name":"paper"}, {"icon":"✌🏽", "name":"scissors"}];
+  // from this array we will make three buttons
+  const userSelectionButtons = choices.map((choice, index) =>
+    <button key={index} onClick={() => handleClick(choice.name)}>
+      {choice.icon}
+    </button>
+  );
+
   // this is when the game start. we get handleClick value from selections button  (rock paper scissors) depending on user click
   const handleClick = (value) => {
     setMessage("");
@@ -31,9 +39,8 @@ const App = () => {
 
   // generating the computer choice
   const generateComputerChoice = () => {
-    const option = ["rock", "paper", "scissors"];
-    const randomChoice = Math.floor(Math.random() * option.length);
-    setComputerChoice(option[randomChoice]);
+    const randomChoice = Math.floor(Math.random() * choices.length);
+    setComputerChoice(choices[randomChoice].name);
   };
 
   // Restarting the game
@@ -123,16 +130,18 @@ const App = () => {
           </span>
         </h2>
         <div className="selections">
-          <button onClick={() => handleClick("rock")}>👊🏽</button>
+          {userSelectionButtons}
+          
+          {/* <button onClick={() => handleClick("rock")}>👊🏽</button>
           <button onClick={() => handleClick("paper")}>✋🏽</button>
-          <button onClick={() => handleClick("scissors")}>✌🏽</button>
+          <button onClick={() => handleClick("scissors")}>✌🏽</button> */}
         </div>
       </div>
-      <p class="githubIcon">
+      <p className="githubIcon">
        Code on &nbsp;<a
-        target="_blank"
+        target="_blank" rel="noreferrer"
         href="https://github.com/alimadhibujar/Rock-Paper-Scissors-React-Game"
-        ><i class="fa fa-github" title="github"></i>
+        ><i className="fa fa-github" title="github"></i>
       </a>
     </p>
     </div>
